@@ -1,5 +1,14 @@
-import SwiftUI
+//
+//  ContentView.swift
+//  iosApp
+//
+//  swiftlint:disable one_declaration_per_file
+
 import Shared
+import SwiftUI
+
+private let kSpacing: CGFloat = 16
+private let kFontSize: CGFloat = 200
 
 struct ContentView: View {
     @State private var showContent = false
@@ -7,14 +16,14 @@ struct ContentView: View {
         VStack {
             Button("Click me!") {
                 withAnimation {
-                    showContent = !showContent
+					showContent.toggle()
                 }
             }
 
             if showContent {
-                VStack(spacing: 16) {
+                VStack(spacing: kSpacing) {
                     Image(systemName: "swift")
-                        .font(.system(size: 200))
+                        .font(.system(size: kFontSize))
                         .foregroundColor(.accentColor)
                     Text("SwiftUI: \(Greeting().greet())")
                 }

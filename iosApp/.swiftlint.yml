@@ -1,0 +1,64 @@
+opt_in_rules:
+  - all
+
+# Disabled Rules
+disabled_rules:
+  - blanket_disable_command
+  - closure_body_length
+  - conditional_returns_on_newline
+  - discouraged_optional_boolean
+  - explicit_acl
+  - explicit_enum_raw_value
+  - explicit_top_level_acl
+  - explicit_type_interface
+  - file_types_order
+  - function_default_parameter_at_end
+  - indentation_width
+  - missing_docs
+  - no_extension_access_modifier
+  - no_grouping_extension
+  - opening_brace
+  - pattern_matching_keywords
+  - prefer_nimble
+  - required_deinit
+  - trailing_comma
+  - type_contents_order
+  - strong_iboutlet
+  - accessibility_label_for_image
+
+# Rule Configurations
+cyclomatic_complexity: 15
+
+file_header:
+  severity: error
+  required_pattern: |
+                    \/\/
+                    \/\/  SWIFTLINT_CURRENT_FILENAME
+                    \/\/  .*?
+                    \/\/
+
+file_length:
+  warning: 1000
+  error: 2000
+
+function_body_length:
+  warning: 100
+  error: 200
+
+large_tuple:
+  warning: 5
+
+line_length: 100
+
+nesting:
+  type_level:
+    warning: 3
+    error: 5
+
+trailing_whitespace:
+  severity: error
+  ignores_empty_lines: true
+  ignores_comments: true
+
+type_name:
+  max_length: 60

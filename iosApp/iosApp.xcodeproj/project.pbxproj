@@ -11,16 +11,34 @@
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
+		C5F71F452BB85A66009AE43E /* +UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F71F442BB85A66009AE43E /* +UIApplication.swift */; };
+		C5F71F4F2BB863D1009AE43E /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F71F4E2BB863D1009AE43E /* WelcomeView.swift */; };
+		C5F71F542BB8B802009AE43E /* AppNativeComponentBridgingHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F71F532BB8B802009AE43E /* AppNativeComponentBridgingHandler.swift */; };
+		C5F71F562BB8B81A009AE43E /* WindowProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F71F552BB8B81A009AE43E /* WindowProtocol.swift */; };
+		C5F71F582BB8B845009AE43E /* ViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F71F572BB8B845009AE43E /* ViewControllerProtocol.swift */; };
+		C5F71F5A2BB8B858009AE43E /* NavigationControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F71F592BB8B858009AE43E /* NavigationControllerProtocol.swift */; };
+		C5F71F5C2BB9F6AA009AE43E /* +WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F71F5B2BB9F6AA009AE43E /* +WelcomeViewController.swift */; };
+		C5F71F5E2BB9F801009AE43E /* NativeViewControllerRenderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F71F5D2BB9F801009AE43E /* NativeViewControllerRenderable.swift */; };
+		C5F71F612BB9FBEA009AE43E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C5F71F602BB9FBEA009AE43E /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
-		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = iosApp.app; path = KyuKotlinTemplates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB3632DC29227652001CCB65 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		C5F71F442BB85A66009AE43E /* +UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+UIApplication.swift"; sourceTree = "<group>"; };
+		C5F71F4E2BB863D1009AE43E /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		C5F71F532BB8B802009AE43E /* AppNativeComponentBridgingHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNativeComponentBridgingHandler.swift; sourceTree = "<group>"; };
+		C5F71F552BB8B81A009AE43E /* WindowProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowProtocol.swift; sourceTree = "<group>"; };
+		C5F71F572BB8B845009AE43E /* ViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerProtocol.swift; sourceTree = "<group>"; };
+		C5F71F592BB8B858009AE43E /* NavigationControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerProtocol.swift; sourceTree = "<group>"; };
+		C5F71F5B2BB9F6AA009AE43E /* +WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+WelcomeViewController.swift"; sourceTree = "<group>"; };
+		C5F71F5D2BB9F801009AE43E /* NativeViewControllerRenderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeViewControllerRenderable.swift; sourceTree = "<group>"; };
+		C5F71F602BB9FBEA009AE43E /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +70,7 @@
 		7555FF72242A565900829871 = {
 			isa = PBXGroup;
 			children = (
+				C5F71F602BB9FBEA009AE43E /* .swiftlint.yml */,
 				AB1DB47929225F7C00F7AF9C /* Configuration */,
 				7555FF7D242A565900829871 /* iosApp */,
 				7555FF7C242A565900829871 /* Products */,
@@ -71,6 +90,9 @@
 			isa = PBXGroup;
 			children = (
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
+				C5F71F522BB8B7F2009AE43E /* Bridging */,
+				C5F71F482BB862C0009AE43E /* Scenes */,
+				C5F71F412BB855F4009AE43E /* Extensions */,
 				7555FF82242A565900829871 /* ContentView.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
@@ -87,6 +109,43 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		C5F71F412BB855F4009AE43E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C5F71F442BB85A66009AE43E /* +UIApplication.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C5F71F482BB862C0009AE43E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				C5F71F492BB862C5009AE43E /* Welcome */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		C5F71F492BB862C5009AE43E /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				C5F71F4E2BB863D1009AE43E /* WelcomeView.swift */,
+				C5F71F5B2BB9F6AA009AE43E /* +WelcomeViewController.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		C5F71F522BB8B7F2009AE43E /* Bridging */ = {
+			isa = PBXGroup;
+			children = (
+				C5F71F532BB8B802009AE43E /* AppNativeComponentBridgingHandler.swift */,
+				C5F71F592BB8B858009AE43E /* NavigationControllerProtocol.swift */,
+				C5F71F572BB8B845009AE43E /* ViewControllerProtocol.swift */,
+				C5F71F552BB8B81A009AE43E /* WindowProtocol.swift */,
+				C5F71F5D2BB9F801009AE43E /* NativeViewControllerRenderable.swift */,
+			);
+			path = Bridging;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -98,6 +157,7 @@
 				7555FF77242A565900829871 /* Sources */,
 				B92378962B6B1156000C7307 /* Frameworks */,
 				7555FF79242A565900829871 /* Resources */,
+				C5F71F5F2BB9FA77009AE43E /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -150,6 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5F71F612BB9FBEA009AE43E /* .swiftlint.yml in Resources */,
 				058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */,
 				058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */,
 			);
@@ -158,6 +219,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		C5F71F5F2BB9FA77009AE43E /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint --strict\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		F36B1CEA2AD836FC00CB74D5 /* Compile Kotlin Framework */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -183,8 +262,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5F71F562BB8B81A009AE43E /* WindowProtocol.swift in Sources */,
+				C5F71F4F2BB863D1009AE43E /* WelcomeView.swift in Sources */,
+				C5F71F582BB8B845009AE43E /* ViewControllerProtocol.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
+				C5F71F5C2BB9F6AA009AE43E /* +WelcomeViewController.swift in Sources */,
+				C5F71F542BB8B802009AE43E /* AppNativeComponentBridgingHandler.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
+				C5F71F5E2BB9F801009AE43E /* NativeViewControllerRenderable.swift in Sources */,
+				C5F71F452BB85A66009AE43E /* +UIApplication.swift in Sources */,
+				C5F71F5A2BB8B858009AE43E /* NavigationControllerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,9 +405,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
 				DEVELOPMENT_TEAM = "${TEAM_ID}";
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)";
 				INFOPLIST_FILE = iosApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -349,9 +434,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
 				DEVELOPMENT_TEAM = "${TEAM_ID}";
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)";
 				INFOPLIST_FILE = iosApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
 				LD_RUNPATH_SEARCH_PATHS = (
