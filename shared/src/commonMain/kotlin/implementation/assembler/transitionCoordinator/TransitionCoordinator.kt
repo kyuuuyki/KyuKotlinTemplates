@@ -3,6 +3,7 @@ package implementation.assembler.transitionCoordinator
 import dev.chayanon.packages.kotlin.foundation.protocol.DefaultTransitionCoordinator
 import dev.chayanon.packages.kotlin.foundation.protocol.ResolverProtocol
 import implementation.assembler.Assembler
+import implementation.assembler.bridging.NavigationControllerProtocol
 import implementation.expectation.AppDependencyManager
 
 class TransitionCoordinator : DefaultTransitionCoordinator() {
@@ -33,9 +34,7 @@ class TransitionCoordinator : DefaultTransitionCoordinator() {
         animated: Boolean,
         completion: (() -> Unit)?,
     ) {
-        val presentingWindow = Assembler.shared.windowManager.presentingWindow
-        val rootViewController = presentingWindow?.nativeRootViewController
-        val presentingViewController = rootViewController?.nativePresentingViewController
+        val presentingViewController = Assembler.shared.windowManager.presentingWindow?.nativePresentingViewController ?: return
 
         when (type) {
             is NavigationType.Present -> {
@@ -48,15 +47,11 @@ class TransitionCoordinator : DefaultTransitionCoordinator() {
                     } catch (e: Exception) {
                         return
                     }
-                if (presentingViewController != null) {
-                    presentingViewController.nativePresent(
-                        viewController = viewController,
-                        animated = animated,
-                        completion = completion,
-                    )
-                } else {
-                    presentingWindow?.nativeRootViewController = viewController
-                }
+                presentingViewController.nativePresent(
+                    viewController = viewController,
+                    animated = animated,
+                    completion = completion,
+                )
             }
             is NavigationType.Push -> {
                 val viewController =
@@ -68,14 +63,10 @@ class TransitionCoordinator : DefaultTransitionCoordinator() {
                     } catch (e: Exception) {
                         return
                     }
-                if (presentingViewController != null) {
-                    presentingViewController.nativeNavigationController?.nativePushViewController(
-                        viewController = viewController,
-                        animated = animated,
-                    )
-                } else {
-                    presentingWindow?.nativeRootViewController = viewController
-                }
+                presentingViewController.nativeNavigationController?.nativePushViewController(
+                    viewController = viewController,
+                    animated = animated,
+                )
             }
             is NavigationType.PresentAndPush -> {
                 val viewController =
@@ -88,20 +79,53 @@ class TransitionCoordinator : DefaultTransitionCoordinator() {
                         return
                     }
                 val navigationController =
-                    AppDependencyManager.shared.componentBridging?.initializeNavigationController(
+                    AppDependencyManager.shared.bridgingHandler?.initializeNavigationController(
                         rootViewController = viewController,
                     ) ?: return
-                if (presentingViewController != null) {
-                    presentingViewController.nativePresent(
-                        viewController = navigationController,
-                        animated = animated,
-                        completion = completion,
-                    )
+                presentingViewController.nativePresent(
+                    viewController = navigationController,
+                    animated = animated,
+                    completion = completion,
+                )
+            }
+            NavigationType.Back -> {
+                val dismissalCompletion: () -> Unit = {
+                    if (Assembler.shared.windowManager.presentingWindow?.nativePresentingViewController is NavigationControllerProtocol) {
+                        continueNavigation(
+                            type = NavigationType.Back,
+                            animated = false,
+                            completion = completion,
+                        )
+                    } else {
+                        completion?.invoke()
+                    }
+                }
+
+//                if (presentingViewController == Assembler.shared.windowManager.presentingWindow?.nativeRootViewController) {
+//                    Assembler.shared.windowManager.popWindow()
+//                    completion?.invoke()
+//                    return
+//                }
+
+                val navigationController = presentingViewController.nativeNavigationController
+                val nativeViewControllers = navigationController?.nativeViewControllers
+                if (nativeViewControllers != null) {
+                    if (nativeViewControllers.count() > 1) {
+                        navigationController.nativePopViewController(animated = animated)
+                        dismissalCompletion()
+                    } else {
+                        navigationController.nativeDismiss(
+                            animated = true,
+                            completion = dismissalCompletion,
+                        )
+                    }
                 } else {
-                    presentingWindow?.nativeRootViewController = navigationController
+                    presentingViewController.nativeDismiss(
+                        animated = animated,
+                        completion = dismissalCompletion,
+                    )
                 }
             }
-            NavigationType.Back -> TODO()
             NavigationType.Reset -> TODO()
             is NavigationType.OpenUrl -> TODO()
             is NavigationType.OpenSystemBrowser -> TODO()

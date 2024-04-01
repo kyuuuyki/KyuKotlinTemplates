@@ -8,6 +8,10 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import dev.chayanon.kmp.bridging.appBridgingHandler
+import dev.chayanon.kmp.welcome.WelcomeFragment
+import implementation.expectation.AppDependencyManager
+import implementation.scenes.welcome.WelcomeViewController
 import kyukotlintemplates.composeapp.generated.resources.Res
 import kyukotlintemplates.composeapp.generated.resources.compose_multiplatform
 import org.jetbrains.compose.resources.ExperimentalResourceApi
@@ -31,6 +35,19 @@ fun App() {
                     Text("Compose: $greeting")
                 }
             }
+            Button(
+                onClick = {
+                    val fragmentManager = AppDependencyManager.shared.appBridgingHandler!!.supportFragmentManager
+                    val fragmentTransaction = fragmentManager.beginTransaction()
+                    val viewController = WelcomeViewController(interactor = null, router = null)
+                    val fragment = WelcomeFragment(viewController)
+                    fragmentTransaction.add(fragment, null)
+                    fragmentTransaction.commit()
+                },
+                content = {
+                    Text("Show!")
+                },
+            )
         }
     }
 }

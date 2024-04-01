@@ -9,6 +9,12 @@ import Shared
 import UIKit
 
 extension UIWindow: WindowProtocol {
+	public var nativePresentingViewController: ViewControllerProtocol? {
+		UIApplication.topViewController(
+			controller: rootViewController
+		)
+	}
+	
 	public func nativeMakeKeyAndVisible() {
 		makeKeyAndVisible()
 	}

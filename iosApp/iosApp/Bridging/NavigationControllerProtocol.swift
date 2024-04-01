@@ -9,10 +9,6 @@ import Shared
 import UIKit
 
 extension UINavigationController: NavigationControllerProtocol {
-	public func nativePopViewController(animated: Bool) {
-		popViewController(animated: animated)
-	}
-	
 	public var nativeViewControllers: [ViewControllerProtocol] {
 		get {
 			viewControllers
@@ -32,6 +28,10 @@ extension UINavigationController: NavigationControllerProtocol {
 			guard let viewController = nativeRootViewController as? UIViewController else { return }
 			viewControllers = [viewController]
 		}
+	}
+	
+	public func nativePopViewController(animated: Bool) {
+		popViewController(animated: animated)
 	}
 	
 	public func nativePushViewController(

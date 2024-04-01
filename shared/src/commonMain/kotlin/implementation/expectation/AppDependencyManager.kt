@@ -7,5 +7,5 @@ class AppDependencyManager {
         val shared = AppDependencyManager()
     }
 
-    var componentBridging: NativeComponentBridgingProtocol? = null
+    var bridgingHandler: NativeComponentBridgingProtocol? = null
 }

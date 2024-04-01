@@ -37,6 +37,10 @@ class WelcomeViewController(
         router?.navigateToPresentAndPush()
     }
 
+    fun didTapOnBackButton() {
+        router?.navigateToBack()
+    }
+
     // INTERACTION: GET WELCOME DETAIL
     private fun getWelcomeDetail() {
         val request = WelcomeSceneModel.GetWelcomeDetail.Request()

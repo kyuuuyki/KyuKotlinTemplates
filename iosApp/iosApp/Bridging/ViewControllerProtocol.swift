@@ -9,14 +9,6 @@ import Shared
 import UIKit
 
 extension UIViewController: ViewControllerProtocol {
-	public func nativeDismiss(
-		animated: Bool,
-		completion: (() -> Void)? = nil
-	) {
-		dismiss(animated: animated)
-		completion?()
-	}
-	
 	public func nativePresent(
 		viewController: ViewControllerProtocol,
 		animated: Bool,
@@ -35,5 +27,9 @@ extension UIViewController: ViewControllerProtocol {
 		UIApplication.topViewController(
 			controller: self
 		)
+	}
+	
+	public func nativeDismiss(animated: Bool, completion: (() -> Void)? = nil) {
+		dismiss(animated: animated, completion: completion)
 	}
 }

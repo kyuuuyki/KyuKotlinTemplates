@@ -45,6 +45,12 @@ struct WelcomeView: View {
 						Text("PresentAndPush")
 					}
 					.buttonStyle(BorderedProminentButtonStyle())
+					Button { [weak viewController] in
+						viewController?.didTapOnBackButton()
+					} label: {
+						Text("Back")
+					}
+					.buttonStyle(BorderedProminentButtonStyle())
 				}
 			}
 			.navigationTitle("Navigation Stack")

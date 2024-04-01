@@ -18,6 +18,9 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
+            implementation(libs.androidx.navigation.compose)
+            implementation(libs.androidx.appcompat)
+            implementation("androidx.compose.runtime:runtime-livedata")
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -63,4 +66,8 @@ android {
     dependencies {
         debugImplementation(libs.compose.ui.tooling)
     }
+}
+dependencies {
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.appcompat)
 }

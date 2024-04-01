@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct iOSApp: App {
 	init() {
-		AppDependencyManager.companion.shared.componentBridging = AppNativeComponentBridgingHandler()
+		AppDependencyManager.companion.shared.bridgingHandler = AppNativeComponentBridgingHandler()
 	}
 	
 	var body: some Scene {

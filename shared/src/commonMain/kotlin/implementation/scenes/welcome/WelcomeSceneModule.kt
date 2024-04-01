@@ -45,7 +45,7 @@ class WelcomeSceneModule : SceneModuleProtocol {
         viewController.interactor = interactor
         viewController.router = router
 
-        return AppDependencyManager.shared.componentBridging?.initializeViewController(
+        return AppDependencyManager.shared.bridgingHandler?.initializeViewController(
             viewController = viewController,
         ) ?: throw ResolverError.RenderingError
     }

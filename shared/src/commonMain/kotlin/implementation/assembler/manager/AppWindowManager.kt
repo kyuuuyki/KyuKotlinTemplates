@@ -13,7 +13,7 @@ class AppWindowManager {
     }
 
     fun pushWindow() {
-        val window = AppDependencyManager.shared.componentBridging?.initializeWindow() ?: return
+        val window = AppDependencyManager.shared.bridgingHandler?.initializeWindow() ?: return
         window.nativeMakeKeyAndVisible()
         windows.add(window)
     }

@@ -9,6 +9,8 @@ interface WelcomeRouterProtocol {
     fun navigateToPush()
 
     fun navigateToPresentAndPush()
+
+    fun navigateToBack()
 }
 
 class WelcomeRouter(
@@ -45,6 +47,15 @@ class WelcomeRouter(
                     sceneName = "WelcomeScene",
                     parameters = emptyMap(),
                 ),
+            animated = true,
+            completion = null,
+        )
+    }
+
+    override fun navigateToBack() {
+        transitionCoordinator.performNavigation(
+            type =
+                NavigationType.Back,
             animated = true,
             completion = null,
         )
