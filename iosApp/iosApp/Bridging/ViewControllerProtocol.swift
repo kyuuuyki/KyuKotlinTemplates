@@ -23,12 +23,6 @@ extension UIViewController: ViewControllerProtocol {
 		navigationController
 	}
 	
-	public var nativePresentingViewController: ViewControllerProtocol? {
-		UIApplication.topViewController(
-			controller: self
-		)
-	}
-	
 	public func nativeDismiss(animated: Bool, completion: (() -> Void)? = nil) {
 		dismiss(animated: animated, completion: completion)
 	}
