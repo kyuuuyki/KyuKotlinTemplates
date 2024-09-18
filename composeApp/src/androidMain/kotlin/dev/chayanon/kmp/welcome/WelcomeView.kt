@@ -2,9 +2,15 @@ package dev.chayanon.kmp.welcome
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.material.BottomSheetScaffold
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.ModalBottomSheetLayout
+import androidx.compose.material.ModalBottomSheetValue
 import androidx.compose.material.Text
+import androidx.compose.material.rememberModalBottomSheetState
 import androidx.compose.runtime.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
@@ -22,7 +28,7 @@ fun WelcomeView(
     viewModel: WelcomeViewModel,
 ) {
     viewModel.liveDataUpdater.observeAsState().value ?: return
-
+    
     MaterialTheme {
         Column(
             Modifier
@@ -73,6 +79,7 @@ fun WelcomeView(
                     Text("Back")
                 },
             )
+            Spacer(modifier = Modifier.fillMaxHeight())
         }
     }
 }
